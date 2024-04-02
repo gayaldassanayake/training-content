@@ -13,7 +13,7 @@ type DBConfig record {|
 
 configurable DBConfig dbConfig = ?;
 
-final mysql:Client forumDBClient = check initDbClient();
+isolated final mysql:Client forumDBClient = check initDbClient();
 
 function initDbClient() returns mysql:Client|error => new (...dbConfig);
 
